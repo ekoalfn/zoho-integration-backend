@@ -32,10 +32,10 @@ class ZohoApi
                     $request->session()->put('zoho_access_token', $body['access_token']);
                 } else {
                     // If refresh fails, redirect to auth
-                    return redirect()->away('/api/zoho/auth');
+                    return redirect()->away('/zoho/auth');
                 }
             } else {
-                return redirect()->away('/api/zoho/auth');
+                return redirect()->away('/zoho/auth');
             }
         }
 
