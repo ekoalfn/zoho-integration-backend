@@ -75,7 +75,7 @@ class ZohoController extends Controller
                     ['account_id' => $account['account_id']],
                     [
                         'account_name' => $account['account_name'],
-                        'account_type' => $account['account_type_formatted'],
+                        'account_type' => $account['account_type'] ?? null,
                         'is_active' => $account['is_active'],
                         'description' => $account['description'] ?? '',
                     ]
