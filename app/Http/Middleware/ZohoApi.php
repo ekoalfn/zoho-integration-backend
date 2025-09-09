@@ -31,11 +31,11 @@ class ZohoApi
                 if (isset($body['access_token'])) {
                     $request->session()->put('zoho_access_token', $body['access_token']);
                 } else {
-                    // If refresh fails, redirect to auth
-                    return redirect()->away('/zoho/auth');
+                    // If refresh fails, return JSON error for API calls
+                    return response()->json(['error' => 'Authentication required'], 401);
                 }
             } else {
-                return redirect()->away('/zoho/auth');
+                return response()->json(['error' => 'Authentication required'], 401);
             }
         }
 
